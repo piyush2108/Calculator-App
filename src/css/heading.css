@@ -1,0 +1,17 @@
+.heading{
+    margin: 0;
+}
+
+#heading{
+    margin: 0;
+    font-size: 2rem;
+    font-family: 'Righteous', cursive;
+    color: #1A3C40;
+}
+
+#sub-heading{
+    margin: 0;
+    font-family: 'Righteous', cursive;
+    font-size: 1rem;
+    color: #fff;
+}

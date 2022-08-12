@@ -1,0 +1,44 @@
+@import-normalize;
+@import "heading.css";
+@import "output.css";
+@import "buttonsGrid.css";
+@import "buttons.css";
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background: transparent;
+    opacity: .5;
+    border-radius: 10px;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: #000;
+}   
+
+.calculator-grid{
+    display: flex;
+    margin: 2% auto;
+    width: 40%;
+    background: #6D8B74;
+    flex-direction: column;
+    border-radius: 30px;
+    box-shadow: 20px 10px #5F7161;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+    padding: 2%;
+}
