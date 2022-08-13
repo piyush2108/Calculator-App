@@ -1,7 +1,7 @@
 .output-display{
     margin: 20px 0 30px;
-    padding: 3% 5%;
-    min-height: 150px;
+    padding: 2%;
+    min-height: 100px;
     max-height: 200px;
     text-align: end;
     background: #94c88a;
@@ -21,7 +21,7 @@
 
 .current-operand{
     margin-top: 25px;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-family: 'Space Mono', monospace;
     color: #000;
 }

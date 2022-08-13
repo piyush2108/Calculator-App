@@ -30,7 +30,7 @@ body{
 .calculator-grid{
     display: flex;
     margin: 2% auto;
-    width: 40%;
+    width: 30%;
     background: #6D8B74;
     flex-direction: column;
     border-radius: 30px;
