@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import History from "../history";
+import HistoryData from "../historyData";
+import Heading from "./Heading";
+import History from "./history";
 import "../css/app.css";
 
 
@@ -39,7 +41,7 @@ function App(){
           setPrevState("")
           setOperator("")
         }
-
+        
         return setPrevState(evaluate(currState, prevState, value))
 
       case 'Evaluate':
@@ -50,10 +52,12 @@ function App(){
           setOperator("")
           return setCurrState(prevState)
         }
+
         if(prevState !== "" && currState !== "O"){
-          const newItem = prevState+operator+currState+"="+evaluate(currState, prevState, operator)
-          History.push(newItem)
+          const newItem = prevState+operator+currState+"\n= "+evaluate(currState, prevState, operator)
+          HistoryData.push(newItem)
         }
+
         setPrevState("")
         setOperator("")
         return setCurrState(evaluate(currState, prevState, operator))
@@ -87,95 +91,99 @@ function App(){
       case "÷":
         computation = prev / current
         break
+
+      case "%":
+        computation = prev / 100
+        break
+
       default: return ""
     }
   
     return computation.toString()
   }
   
-  return(  
-    <div className="calculator-grid">
-      <div className="container">
-        <div className="heading">
-          <h1 id="heading">calc.</h1>
-          <p id="sub-heading">using ReactJS</p>
+  return(
+    <div className="calculator">
+      <div className="calculator-grid">
+        <div className="container">
+          <Heading />
+
+          <div className="output-display">
+              <div className="previous-operand">{prevState}{operator}</div>
+              <div className="current-operand">{currState}</div>
+          </div>
+
+          <div className="buttons-grid">
+              <button 
+              className="btn btn--danger"
+              onClick={() => handleClick({type: "Clear", value: "C"})}>C</button>
+              <button 
+              className="btn btn--danger"
+              onClick={() => handleClick({type: "deleteDigit", value: "←"})}>←</button>
+
+              <button 
+              className="btn btn--operator" 
+              onClick={() => handleClick({type: "Operator", value: '%'})}>%</button>
+              <button 
+              className="btn btn--operator" 
+              onClick={() => handleClick({type: "Operator", value: '÷'})}>÷</button>
+
+              <button 
+              className="btn btn--primary" 
+              onClick={() => handleClick({type: "addDigit", value: '7'})}>7</button>
+              <button 
+              className="btn btn--primary" 
+              onClick={() => handleClick({type: "addDigit", value: '8'})}>8</button>
+              <button 
+              className="btn btn--primary" 
+              onClick={() => handleClick({type: "addDigit", value: '9'})}>9</button>
+
+              <button 
+              className="btn btn--operator" 
+              onClick={() => handleClick({type: "Operator", value: 'x'})}>x</button>
+
+              <button 
+              className="btn btn--primary" 
+              onClick={() => handleClick({type: "addDigit", value: '4'})}>4</button>
+              <button 
+              className="btn btn--primary" 
+              onClick={() => handleClick({type: "addDigit", value: '5'})}>5</button>
+              <button 
+              className="btn btn--primary" 
+              onClick={() => handleClick({type: "addDigit", value: '6'})}>6</button>
+
+              <button 
+              className="btn btn--operator" 
+              onClick={() => handleClick({type: "Operator", value: '-'})}>-</button>
+
+              <button 
+              className="btn btn--primary" 
+              onClick={() => handleClick({type: "addDigit", value: '1'})}>1</button>
+              <button 
+              className="btn btn--primary" 
+              onClick={() => handleClick({type: "addDigit", value: '2'})}>2</button>
+              <button 
+              className="btn btn--primary" 
+              onClick={() => handleClick({type: "addDigit", value: '3'})}>3</button>
+
+              <button 
+              className="btn btn--operator" 
+              onClick={() => handleClick({type: "Operator", value: '+'})}>+</button>
+              
+              <button 
+              className="btn btn--primary span-two" 
+              onClick={() => handleClick({type: "addDigit", value: '0'})}>0</button>
+              <button 
+              className="btn btn--primary" 
+              onClick={() => handleClick({type: "addDigit", value: '.'})}>.</button>
+              
+              <button 
+              className="btn btn--equality" 
+              onClick={() => handleClick({type: "Evaluate", value: "="})}>=</button>
+          </div>
         </div>
-
-        <div className="output-display">
-            <div className="previous-operand">{prevState}{operator}</div>
-            <div className="current-operand">{currState}</div>
-        </div>
-
-        <div className="buttons-grid">
-            <button 
-            className="btn btn--danger"
-            onClick={() => handleClick({type: "Clear", value: "C"})}>C</button>
-            <button 
-            className="btn btn--danger"
-            onClick={() => handleClick({type: "deleteDigit", value: "←"})}>←</button>
-
-            <button 
-            className="btn btn--operator" 
-            onClick={() => handleClick({type: "Operator", value: '%'})}>%</button>
-            <button 
-            className="btn btn--operator" 
-            onClick={() => handleClick({type: "Operator", value: '÷'})}>÷</button>
-
-            <button 
-            className="btn btn--primary" 
-            onClick={() => handleClick({type: "addDigit", value: '7'})}>7</button>
-            <button 
-            className="btn btn--primary" 
-            onClick={() => handleClick({type: "addDigit", value: '8'})}>8</button>
-            <button 
-            className="btn btn--primary" 
-            onClick={() => handleClick({type: "addDigit", value: '9'})}>9</button>
-
-            <button 
-            className="btn btn--operator" 
-            onClick={() => handleClick({type: "Operator", value: 'x'})}>x</button>
-
-            <button 
-            className="btn btn--primary" 
-            onClick={() => handleClick({type: "addDigit", value: '4'})}>4</button>
-            <button 
-            className="btn btn--primary" 
-            onClick={() => handleClick({type: "addDigit", value: '5'})}>5</button>
-            <button 
-            className="btn btn--primary" 
-            onClick={() => handleClick({type: "addDigit", value: '6'})}>6</button>
-
-            <button 
-            className="btn btn--operator" 
-            onClick={() => handleClick({type: "Operator", value: '-'})}>-</button>
-
-            <button 
-            className="btn btn--primary" 
-            onClick={() => handleClick({type: "addDigit", value: '1'})}>1</button>
-            <button 
-            className="btn btn--primary" 
-            onClick={() => handleClick({type: "addDigit", value: '2'})}>2</button>
-            <button 
-            className="btn btn--primary" 
-            onClick={() => handleClick({type: "addDigit", value: '3'})}>3</button>
-
-            <button 
-            className="btn btn--operator" 
-            onClick={() => handleClick({type: "Operator", value: '+'})}>+</button>
-            
-            <button 
-            className="btn btn--primary span-two" 
-            onClick={() => handleClick({type: "addDigit", value: '0'})}>0</button>
-            <button 
-            className="btn btn--primary" 
-            onClick={() => handleClick({type: "addDigit", value: '.'})}>.</button>
-            
-            <button 
-            className="btn btn--equality" 
-            onClick={() => handleClick({type: "Evaluate", value: "="})}>=</button>
-        </div>
-
       </div>
+      <History />
     </div>
   )
 }

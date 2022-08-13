@@ -15,3 +15,8 @@
     font-size: 1rem;
     color: #fff;
 }
+
+#history-btn{
+    margin-top: -10px;
+    text-align: end;
+}

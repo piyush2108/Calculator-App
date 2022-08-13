@@ -24,12 +24,18 @@
 
 body{
     margin: 0;
-    background: #000;
-}   
+    background: #F7ECDE;
+}
+
+.calculator{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 
 .calculator-grid{
     display: flex;
-    margin: 2% auto;
+    margin: 2%;
     width: 30%;
     background: #6D8B74;
     flex-direction: column;
