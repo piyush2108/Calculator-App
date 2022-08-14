@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import HistoryData from "../historyData"
 import HistoryItem from "./historyItem"
 import icon from "../images/history.png"
-import "../css/history.css"
 
 export default function History(){
     const [isActive, setIsActive] = useState(false)
@@ -14,7 +13,7 @@ export default function History(){
     return(
         <div
         style={{
-            top: isActive === false ? "50%" : "-32%",
+            top: isActive === false ? "-34%" : "50%",
         }}
         onClick={() => handleClick()}
         className="history-column">

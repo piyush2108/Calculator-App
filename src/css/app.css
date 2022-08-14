@@ -3,6 +3,7 @@
 @import "output.css";
 @import "buttonsGrid.css";
 @import "buttons.css";
+@import "history.css";
 
 ::-webkit-scrollbar{
     width: 10px;
@@ -24,7 +25,7 @@
 
 body{
     margin: 0;
-    background: #F7ECDE;
+    background: #000;
 }
 
 .calculator{
@@ -47,4 +48,13 @@ body{
     width: 90%;
     margin: auto;
     padding: 2%;
+}
+
+@media(max-width: 1000px){
+    .calculator-grid{
+        width: 50%;
+    }
+    .history-column{
+        display: none;
+    }
 }

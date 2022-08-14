@@ -6,12 +6,9 @@
     padding: 2%;
     padding-top: 1% ;
     width: 20%;
-    
-    background: #1e1e1e;  
+    background: #6D8B74;  
     border-radius: 20px;
-    
-    transition-duration: 200ms;
-    transition-property: position, transform;
+    transition: top 400ms linear;
 }
 
 .history-heading{
@@ -20,7 +17,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #DF7861;
+    border-bottom: 1px solid #5F7161; 
 }
 
 #icon{
@@ -36,7 +33,7 @@
 }
 
 #history-title{
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Fjalla One', sans-serif;
     font-size: 2rem;
     font-weight: 300;
     color: #fff;
@@ -47,6 +44,6 @@
     text-align: start;
     font-family: 'Space Mono', monospace;
     font-size: 1.2rem;
-    color: #fff;
+    color: #e8e6e6;
     white-space: pre-wrap;
 }
