@@ -36,7 +36,8 @@ body{
 
 .calculator-grid{
     display: flex;
-    margin: 2%;
+    height: 90vh;
+    margin: 2rem auto;
     width: 30%;
     background: #6D8B74;
     flex-direction: column;

@@ -84,6 +84,7 @@ function App(){
     const prev = parseFloat(prevState)
     const current = parseFloat(currState)
     if (isNaN(prev) || isNaN(current)) return ""
+    
     let computation = ""
     switch (value) {
       case "+":
@@ -100,7 +101,7 @@ function App(){
         break
 
       case "%":
-        computation = prev / 100
+        computation = prev / 100 * current
         break
 
       default: return ""

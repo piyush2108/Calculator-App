@@ -13,7 +13,7 @@ export default function History(){
     return(
         <div
         style={{
-            top: isActive === false ? "-34%" : "50%",
+            top: isActive === false ? "-25%" : "50%",
         }}
         onClick={() => handleClick()}
         className="history-column">
