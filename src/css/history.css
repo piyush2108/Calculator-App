@@ -8,7 +8,7 @@
     width: 20%;
     background: #6D8B74;  
     border-radius: 20px;
-    transition: top 400ms linear;
+    transition: top cubic-bezier(0, 0.7, 0.52, 1.34) 350ms;
 }
 
 .history-heading{
